@@ -279,6 +279,10 @@ class ReceiptsTestCase(unittest.HomeserverTestCase):
                     },
                     # This user's value is a string, not an object.
                     "@malformed:remote.example.org": "not a dict",
+                    # This user's event_ids list has non-string elements.
+                    "@malformed-event-ids:remote.example.org": {
+                        "event_ids": [1, None],
+                    },
                 },
             },
         }
